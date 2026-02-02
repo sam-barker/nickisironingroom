@@ -1,0 +1,26 @@
+{
+  "name": "Nicki's Ironing Room",
+  "short_name": "Ironing Room",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7eeee",
+  "theme_color": "#2a2e31",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

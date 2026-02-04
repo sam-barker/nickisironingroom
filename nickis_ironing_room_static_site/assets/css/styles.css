@@ -297,20 +297,62 @@ h3 {
 .small { font-size: .9rem; }
 .x-small { font-size: .8rem; }
 
+/* MOBILE NAVIGATION IMPROVEMENTS */
 @media (max-width: 860px) {
-  .nav-links { display: none; }
-  .nav-toggle { display: inline-block; }
-  .nav-links.open {
-    display: flex;
+
+  .nav {
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
     flex-direction: column;
     position: absolute;
-    right: 4%;
-    top: 58px;
+    right: 0;
+    left: 0;
+    top: 100%;
     background: var(--panel);
-    border: 1px solid rgba(0,0,0,0.08);
-    padding: .6rem;
-    border-radius: .6rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 0.8rem 0;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    animation: navSlideDown 0.25s ease forwards;
   }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 1rem 1.4rem;
+    font-size: 1.1rem;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+    z-index: 2000;
+  }
+
+  /* Hamburger animation */
+  .nav-toggle.open .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle.open .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.open .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-toggle-bar {
+    transition: 0.3s ease;
+  }
+}
+
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .map-preview{
